@@ -1,0 +1,9 @@
+banksystem.business
+banksystem.dao
+banksystem.data
+banksystem.dto
+banksystem.enums
+banksystem.exceptions
+banksystem.service
+banksystem.ui.client1
+banksystem.ui.client2
