@@ -21,7 +21,8 @@ public interface ITransaction {
 	 * Effectue un dépôt dans le compte.
 	 *
 	 * @param amount montant à déposer
-	 * @throws NotInRangeException si le montant est invalide
+	 * @throws InsufficientFundException si la logique du compte interdit ce dépôt
+	 * @throws NotInRangeException       si le montant est invalide (négatif ou nul)
 	 */
 	void deposit(double amount) throws InsufficientFundException, NotInRangeException;
 

@@ -5,5 +5,7 @@ banksystem.dto
 banksystem.enums
 banksystem.exceptions
 banksystem.service
+banksystem.ui
 banksystem.ui.client1
 banksystem.ui.client2
+banksystem.util

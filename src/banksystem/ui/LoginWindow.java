@@ -30,25 +30,36 @@ public class LoginWindow extends JFrame {
     private static final Color       BRAND_BLUE       = new Color(0, 70, 127);
     private static final Color       BRAND_GREEN      = new Color(0, 100, 60);
 
+    /** Service d'authentification partagé entre les tentatives de connexion. */
     private final LoginService loginService = new LoginService();
 
-    private JTextField        txtId;
-    private JPasswordField    txtPassword;
-    private JRadioButton      rbManager, rbCustomer;
-    private JButton           btnLogin;
-    private JLabel            lblMessage;
-    private JLabel            lblAttempts;
+    // Composants Swing — transient car JFrame est Serializable mais l'UI ne doit pas l'être
+    private transient JTextField        txtId;
+    private transient JPasswordField    txtPassword;
+    private transient JRadioButton      rbManager;
+    private transient JRadioButton      rbCustomer;
+    private transient JButton           btnLogin;
+    private transient JLabel            lblMessage;
+    private transient JLabel            lblAttempts;
 
+    /**
+     * Point d'entrée alternatif permettant de lancer la fenêtre de connexion directement.
+     *
+     * @param args arguments de la ligne de commande (non utilisés)
+     */
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> new LoginWindow().setVisible(true));
     }
 
+    /**
+     * Construit la fenêtre de connexion et initialise tous ses composants Swing.
+     */
     public LoginWindow() {
         initialize();
     }
 
     private void initialize() {
-        setTitle("BankSystem — Login");
+        setTitle("Fortis Bank — Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(420, 480);
         setLocationRelativeTo(null);
@@ -63,7 +74,7 @@ public class LoginWindow extends JFrame {
         header.setBackground(BRAND_BLUE);
         header.setBorder(new EmptyBorder(24, 30, 24, 30));
 
-        JLabel lblBank = new JLabel("🏦  BankSystem", SwingConstants.CENTER);
+        JLabel lblBank = new JLabel("Fortis Bank", SwingConstants.CENTER);
         lblBank.setFont(new Font("Tahoma", Font.BOLD, 28));
         lblBank.setForeground(Color.WHITE);
 

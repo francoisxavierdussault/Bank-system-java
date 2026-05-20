@@ -15,5 +15,8 @@ public enum EnumAccountType {
 	CREDIT,
 
 	/** Compte devise — gèle des dollars américains pour une durée fixe. */
-	CURRENCY
+	CURRENCY,
+
+	/** Marge de crédit renouvelable — prélèvement et remboursement flexibles. */
+	LINE_OF_CREDIT
 }
